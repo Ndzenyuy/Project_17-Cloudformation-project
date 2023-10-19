@@ -61,10 +61,10 @@ Resources:
               sudo apt-get install jenkins -y
 #              reboot 
 
-  Jenkins-SG:
+  JenkinsSG:
     Type: 'AWS::EC2::SecurityGroup'
     Properties:
-      GroupName: Jenkins-SG
+      GroupName: JenkinsSG
       GroupDescription: Allow SSH & HTTP from myip
       SecurityGroupIngress:
         - IpProtocol: tcp
@@ -88,7 +88,7 @@ Outputs:
     Description: Security Group 1 ID
     Value:
       Fn::GetAtt:
-      - Jenkins-SG
+      - JenkinsSG
       - GroupId
     Export:
       Name: jenk-SGID
