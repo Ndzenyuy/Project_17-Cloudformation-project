@@ -65,9 +65,10 @@ Resources:
               TOMDIR=`echo $EXTOUT | cut -d '/' -f1`
               useradd --shell /sbin/nologin tomcat
               rsync -avzh /tmp/$TOMDIR/ /usr/local/tomcat8/
-#              aws s3 cp s3://cicd-data-vprofile/tomcat-users.xml /usr/local/tomcat8/conf/tomcat-users.xml
-#              aws s3 cp s3://cicd-data-vprofile/context.xml /usr/local/tomcat8/webapps/manager/META-INF/context.xml
-#              chown -R tomcat.tomcat /usr/local/tomcat8 
+
+              
+
+              chown -R tomcat.tomcat /usr/local/tomcat8 
               cat <<EOT>> /etc/systemd/system/tomcat.service
               [Unit]
               Description=Tomcat
